@@ -1,0 +1,23 @@
+body{
+padding: 50px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.btn-action {
+  margin-right: 5px;
+}
+.navbar-custom {
+    background-color: #007bff; 
+  }
