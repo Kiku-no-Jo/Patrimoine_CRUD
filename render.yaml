@@ -1,11 +1,25 @@
-# Exported from Render on 2024-09-06T19:48:04Z
-services:
-- type: web
-  name: Patrimoine_CRUD
-  runtime: node
-  repo: https://github.com/Kiku-no-Jo/Patrimoine_CRUD
-  plan: free
-  region: oregon
-  buildCommand: npm install && npm run build
-  startCommand: npm run start
 version: "1"
+services:
+  - type: web
+    name: Patrimoine_CRUD_Frontend
+    runtime: node
+    repo: https://github.com/Kiku-no-Jo/Patrimoine_CRUD
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 3000  # Adjust the frontend port if needed
+
+  - type: web
+    name: Patrimoine_CRUD_Backend
+    runtime: node
+    repo: https://github.com/Kiku-no-Jo/Patrimoine_CRUD
+    plan: free
+    region: oregon
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && node ./server.js
+    envVars:
+      - key: PORT
+        value: 4000  # You can change this if your backend uses a different port
