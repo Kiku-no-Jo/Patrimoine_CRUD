@@ -3,6 +3,7 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 
 const app = express();
 
@@ -64,6 +65,7 @@ app.post("/api/possessions", (req, res) => {
   const newPossession = req.body;
   const patrimoine = data.find((item) => item.model === "Patrimoine");
   if (patrimoine) {
+    newPossession.id = uuidv4();
     patrimoine.data.possessions.push(newPossession);
     fs.writeFileSync(
       path.join(__dirname, "data", "data.json"),

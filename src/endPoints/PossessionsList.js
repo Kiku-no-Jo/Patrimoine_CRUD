@@ -23,12 +23,14 @@ const PossessionsList = () => {
     fetchPossessions();
   }, []);
 
-  const handleClose = async (libelle) => {
+  const [successMessage, setSuccessMessage] = useState('');
+  const handleClose = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/possessions/${libelle}/close`);
+      await axios.delete(`http://localhost:5000/api/possessions/${id}`);
       setPossessions((prevPossessions) =>
-        prevPossessions.filter((p) => p.libelle !== libelle)
+        prevPossessions.filter((p) => p.id !== id)
       );
+      setSuccessMessage('La possession a été clôturée avec succès.');
     } catch (error) {
       setError("Une erreur est survenue lors de la clôture de la possession.");
     }
