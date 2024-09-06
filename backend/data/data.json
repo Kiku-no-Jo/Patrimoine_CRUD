@@ -1,0 +1,78 @@
+[
+  {
+    "model": "Personne",
+    "data": {
+      "nom": "John Doe"
+    }
+  },
+  {
+    "model": "Patrimoine",
+    "data": {
+      "possesseur": {
+        "nom": "John Doe"
+      },
+      "possessions": [
+        {
+          "libelle": "MSI Gaming",
+          "valeur": "44000000",
+          "dateDebut": "2023-12-25",
+          "dateFin": "",
+          "taux": "5",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        },
+        {
+          "libelle": "Compte épargne",
+          "valeur": 500000,
+          "dateDebut": "2019-01-06",
+          "dateFin": "",
+          "taux": "10",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        },
+        {
+          "libelle": "Clothes",
+          "valeur": "2200000",
+          "dateDebut": "2020-01-01",
+          "dateFin": "",
+          "taux": "-10",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        },
+        {
+          "libelle": "Alternance",
+          "valeur": 600000,
+          "dateDebut": "2023-02-13",
+          "dateFin": "",
+          "taux": "15",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        },
+        {
+          "libelle": "Survie",
+          "valeur": 300000,
+          "dateDebut": "2023-02-13",
+          "dateFin": "",
+          "taux": "30",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        },
+        {
+          "libelle": "Redmi Note 9",
+          "valeur": 800000,
+          "dateDebut": "2022-12-29",
+          "dateFin": "",
+          "taux": "5",
+          "possesseur": {
+            "nom": "John Doe"
+          }
+        }
+      ]
+    }
+  }
+]
