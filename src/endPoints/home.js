@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { format } from 'date-fns';
-import './home.css';
+import React from "react";
+import { Button, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./home.css";
 
 const Home = () => {
-  const [currentDateTime, setCurrentDateTime] = useState(new Date());
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentDateTime(new Date());
-    }, 1000); 
-
-    return () => clearInterval(timer); 
-  }, []);
-
   return (
-    <div className="home-container">
-      <h1>Bienvenue sur Mon Projet React</h1>
-      <div className="date-time">
-        <p className="date">{format(currentDateTime, 'dd/MM/yyyy')}</p>
-        <p className="time">{format(currentDateTime, 'HH:mm:ss')}</p>
-      </div>
+    <div className="home-container text-center">
+      <h1 className="mb-4">--Bienvenue sur le projet Patrimoine--</h1>
+      <Container>
+        <Row className="justify-content-center">
+          <Col xs={12} md={6} lg={4} className="mb-3">
+            <Link to="/patrimoine" className="btn btn-danger btn-lg w-100">
+              Accéder au Patrimoine
+            </Link>
+          </Col>
+          <Col xs={12} md={6} lg={4} className="mb-3">
+            <Link to="/possession" className="btn btn-success btn-lg w-100">
+              Accéder aux Possessions
+            </Link>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

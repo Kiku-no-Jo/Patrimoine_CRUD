@@ -1,0 +1,10 @@
+.nav-link {
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: pink;
+  transform: translateY(-3px);
+}

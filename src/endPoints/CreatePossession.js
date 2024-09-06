@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreatePossession = () => {
-  const [libelle, setLibelle] = useState('');
-  const [valeur, setValeur] = useState('');
-  const [dateDebut, setDateDebut] = useState('');
-  const [dateFin, setDateFin] = useState('');
-  const [taux, setTaux] = useState('');
-  const [possesseur, setPossesseur] = useState(''); 
+  const [libelle, setLibelle] = useState("");
+  const [valeur, setValeur] = useState("");
+  const [dateDebut, setDateDebut] = useState("");
+  const [dateFin, setDateFin] = useState("");
+  const [taux, setTaux] = useState("");
+  const [possesseur, setPossesseur] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -16,20 +16,23 @@ const CreatePossession = () => {
     event.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/possessions', {
-        libelle,
-        valeur,
-        dateDebut,
-        dateFin,
-        taux,
-        possesseur, 
-      });
+      const response = await axios.post(
+        "http://localhost:5000/api/possessions",
+        {
+          libelle,
+          valeur,
+          dateDebut,
+          dateFin,
+          taux,
+          possesseur,
+        }
+      );
 
       if (response.status === 201) {
-        navigate('/possessions');
+        navigate("/possessions");
       }
     } catch (error) {
-      setError('An error occurred while creating the possession.');
+      setError("An error occurred while creating the possession.");
     }
   };
 
@@ -91,7 +94,7 @@ const CreatePossession = () => {
             onChange={(e) => setTaux(e.target.value)}
           />
         </div>
-        <div className="form-group"> {/* Nouveau champ pour le possesseur */}
+        <div className="form-group">
           <label htmlFor="possesseur">Possesseur</label>
           <input
             type="text"
