@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const ListPossession = () => {
+const PossessionsList = () => {
   const [possessions, setPossessions] = useState([]);
   const [error, setError] = useState(null);
 
@@ -78,4 +78,4 @@ const ListPossession = () => {
   );
 };
 
-export default ListPossession;
+export default PossessionsList;

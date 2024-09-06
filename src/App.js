@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import CreatePossession from './pages/CreatePossession';
-import ListPossession from './pages/ListPossession';
-import UpdatePossession from './pages/UpdatePossession';
-import Patrimoine from './pages/Patrimoine';
-import PossessionsTable from './CalculatePatrimoine';
+import CreatePossession from './endPoints/CreatePossession';
+import PossessionsList from './endPoints/PossessionsList';
+import UpdatePossession from './endPoints/UpdatePossession';
+import Patrimoine from './endPoints/Patrimoine';
+import PossessionsTable from './CalculateValue';
 import Home from './pages/home'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,7 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/patrimoine" element={<Patrimoine possessions={possessions} />} />
-          <Route path="/possession" element={<ListPossession />} /> 
+          <Route path="/possession" element={<PossessionsList />} /> 
           <Route path="/possession/create" element={<CreatePossession />} />
           <Route path="/possession/:libelle/update" element={<UpdatePossession possessions={possessions} />} />
           <Route path="/patrimoine/possessions-table" element={<PossessionsTable possessions={possessions} />} />
