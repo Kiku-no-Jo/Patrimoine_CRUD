@@ -22,4 +22,4 @@ services:
     startCommand: cd backend && node ./server.js
     envVars:
       - key: PORT
-        value: 4000  # You can change this if your backend uses a different port
+        value: 5000
